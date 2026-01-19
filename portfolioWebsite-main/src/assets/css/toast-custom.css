@@ -1,0 +1,22 @@
+/* Custom Toastify styles */
+.Toastify__toast {
+  font-size: 1rem;   /* default */
+  padding: 12px 16px;
+}
+
+/* For mobile screens */
+@media (max-width: 640px) {
+  .Toastify__toast {
+    font-size: 0.8rem;   /* smaller text */
+    padding: 8px 12px;   /* less padding */
+    min-height: 40px;  
+    max-width: 55%;
+    margin-right: 10px;
+  }
+  .Toastify__toast-body {
+    margin: 0px;  /* adjust body margin */
+  }
+  .Toastify__progress-bar {
+    height: 3px; /* thinner progress bar */
+  }
+}
