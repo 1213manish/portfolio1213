@@ -25,7 +25,7 @@ pre[class*="language-"] {
 }
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-  background: #240422;
+  background: #04102a;
 }
 :not(pre) > code[class*="language-"] {
   padding: 0.1em;
@@ -97,5 +97,5 @@ pre[class*="language-"] {
 
 
 .toast-progress {
-  background: #a855f7 !important; /* 💜 Purple */
+  background: #3b82f6 !important; /* 💙 Blue */
 }

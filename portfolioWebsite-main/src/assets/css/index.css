@@ -10,18 +10,18 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #1b021c; /* slate-800 */
+  background: #081024; /* deep navy */
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #990b59, #230424);
+  background: linear-gradient(180deg, #2563eb, #0f172a);
   border-radius: 9999px;
   transition: background 0.4s ease, height 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #990b59,#990b59);
+  background: linear-gradient(180deg, #2563eb,#1d4ed8);
   height: 80px; /* thumb grows smoothly */
 }
 
@@ -58,7 +58,7 @@
 
 .gradient-border {
   position: relative;
-  background: linear-gradient(45deg, #1b021c, #990b59);
+  background: linear-gradient(45deg, #040b1a, #2563eb);
   padding: 2px;
   border-radius: 0.75rem;
 }
@@ -90,7 +90,7 @@
 }
 
 .window-header {
-  background: #210322;
+  background: #041027;
   padding: 0.75rem;
   display: flex;
   align-items: center;
@@ -145,7 +145,7 @@
 
 /* Enhanced Prism.js styling */
 pre[class*="language-"] {
-  background: #0e0111 !important;
+  background: #050c1a !important;
   padding: 1.5rem !important;
   margin: 0 !important;
   font-size: 0.95rem !important;

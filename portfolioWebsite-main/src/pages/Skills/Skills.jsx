@@ -33,7 +33,7 @@ import { MdAnimation } from "react-icons/md";
 import { FcWorkflow } from "react-icons/fc";
 
 const SkillCard = ({ icon: Icon, title, skills, color }) => (
-  <Card className="group relative overflow-hidden bg-[#13021e] border-gray-700 hover:scale-[1.02] transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/20">
+  <Card className="group relative overflow-hidden bg-[#041126] border-gray-700 hover:scale-[1.02] transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/20">
     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[rgba(100,100,255,0.1)] to-transparent group-hover:via-[rgba(100,100,255,0.2)] animate-shimmer"></div>
     <CardContent className="p-6 relative z-10">
       <div className="flex items-center gap-4 mb-6">
@@ -109,7 +109,7 @@ const SkillsSection = () => {
     {
       icon: Layout,
       title: "UI/UX Design",
-      color: "text-purple-400",
+      color: "text-cyan-300",
       skills: [
         { name: "Figma", icon: <FaFigma className="w-4 h-4 text-[#F24E1E]" /> },
         {
@@ -121,7 +121,7 @@ const SkillsSection = () => {
     {
       icon: Cpu,
       title: "Tools & Technologies",
-      color: "text-pink-400",
+      color: "text-sky-400",
       skills: [
         {
           name: "VS Code",
@@ -154,7 +154,7 @@ const SkillsSection = () => {
   ];
 
   return (
-    <main className="pt-15 lg:pt-0 text-white min-h-screen bg-[#130b14] relative">
+    <main className="pt-15 lg:pt-0 text-white min-h-screen bg-[#050d1a] relative">
       
 
       <section className="container mx-auto px-4 py-11 relative z-10">

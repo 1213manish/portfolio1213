@@ -3,7 +3,7 @@ import HeroImg from "@/assets/images/mani.png";
 export default function About() {
   return (
     <>
-      <section id="about" className="py-16 md:py-32  text-white bg-[#130b14]">
+      <section id="about" className="py-16 md:py-32  text-white bg-[#050d1a]">
         <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16">
           <h2 className="relative z-10 max-w-xl text-4xl font-medium lg:text-5xl text-white">
             Developer, Designer, Creator, Innovator

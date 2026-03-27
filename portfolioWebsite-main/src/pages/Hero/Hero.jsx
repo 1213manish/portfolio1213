@@ -7,7 +7,6 @@ import PortfolioPage from "@/pages/About/About";
 import { FlipWords } from "@/components/ui/flip-words";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { ToastContainer } from "react-toastify";
 import "/src/assets/css/tomorrow.css";
 import "react-toastify/dist/ReactToastify.css";
 import "/src/assets/css/toast-custom.css";  // your custom styles
@@ -46,6 +45,56 @@ export default function Hero() {
     "MERN Stack Enthusiast",
   ];
 
+  const resumeFileName = "Manish-Kumar-Resume.pdf";
+  const resumeUrl = `/${resumeFileName}`;
+  const toastBaseConfig = {
+    position: "bottom-right",
+    autoClose: 2500,
+    hideProgressBar: false,
+    progressStyle: {
+      background: "#3b82f6",
+      height: "6px",
+      borderRadius: "8px",
+      boxShadow: "0 0 10px rgba(124,58,237,0.35)",
+    },
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    theme: "dark",
+    style: {
+      background: "#031125",
+      color: "#cbd5e1",
+      border: "1px solid #031125",
+      borderRadius: "0.75rem",
+      fontSize: "0.95rem",
+      fontWeight: 500,
+    },
+  };
+
+  const handleResumeDownload = async () => {
+    try {
+      const response = await fetch(resumeUrl);
+      if (!response.ok) {
+        throw new Error("Resume file not found");
+      }
+
+      const blob = await response.blob();
+      const downloadUrl = window.URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = downloadUrl;
+      link.download = resumeFileName;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(downloadUrl);
+
+      toast.success("Resume download starting...", toastBaseConfig);
+    } catch (error) {
+      console.error("Failed to download resume", error);
+      toast.error("Resume not available right now.", toastBaseConfig);
+    }
+  };
+
   const [code] = useState(`
 const profile = {
     name: 'Manish Kumar',
@@ -67,6 +116,7 @@ const profile = {
     }
 };
   `);
+  const [isResumeModalOpen, setIsResumeModalOpen] = useState(false);
 
   useEffect(() => {
     Prism.highlightAll();
@@ -83,7 +133,7 @@ const profile = {
         position: absolute;
         width: 4px;
         height: 4px;
-        background: linear-gradient(45deg, #7C3AED, #ED64A6); /* Purple and Pink Glow */
+        background: linear-gradient(45deg, #2563EB, #38BDF8); /* Electric Blue Glow */
         border-radius: 50%;
         animation: particleFloat infinite ease-in-out;
       }
@@ -145,7 +195,7 @@ const profile = {
 
   return (
     <>
-      <main className="bg-[#130b14] text-white min-h-screen"> {/* Updated background to #0B0B14 */}
+      <main className="bg-[#050d1a] text-white min-h-screen"> {/* Updated background to deep navy */}
         <section
           className="hero min-h-screen flex items-center justify-center relative px-4 sm:px-6 lg:px-8 py-10 md:py-16 lg:py-0 hero-section-padding"
           style={{ paddingTop: "var(--hero-padding-top, 0)" }}
@@ -176,14 +226,14 @@ const profile = {
             {/* Centered Text content - Twist: Made it centered instead of left-aligned for a more modern, focal hero */}
             <div className="w-full max-w-4xl mb-12 animate__animated animate__fadeInUp relative">
               {/* Decorative blurs - Updated colors to specified glows */}
-              <div className="absolute hidden lg:-top-20 lg:left-1/2 transform -translate-x-1/2 lg:block w-48 h-48 lg:w-64 lg:h-64 bg-[#7C3AED]/10 rounded-full blur-3xl"></div> {/* Purple Glow */}
-              <div className="absolute hidden lg:block lg:top-40 lg:left-1/2 transform -translate-x-1/2 w-48 h-48 lg:w-64 lg:h-64 bg-[#ED64A6]/10 rounded-full blur-3xl"></div> {/* Pink Glow */}
+              <div className="absolute hidden lg:-top-20 lg:left-1/2 transform -translate-x-1/2 lg:block w-48 h-48 lg:w-64 lg:h-64 bg-[#2563EB]/10 rounded-full blur-3xl"></div> {/* Azure Glow */}
+              <div className="absolute hidden lg:block lg:top-40 lg:left-1/2 transform -translate-x-1/2 w-48 h-48 lg:w-64 lg:h-64 bg-[#38BDF8]/10 rounded-full blur-3xl"></div> {/* Cyan Glow */}
               <div className="absolute hidden lg:block lg:bottom-20 lg:left-1/2 transform -translate-x-1/2 w-48 h-48 lg:w-64 lg:h-64 bg-[#3B82F6]/10 rounded-full blur-3xl"></div> {/* Blue Glow */}
 
               {/* Welcome badge - Different Look: Changed to a glowing, rounded rectangle with a star icon for a cosmic vibe */}
-              <div className="inline-flex items-center gap-2 px-4 sm:px-6 py-3 rounded-2xl bg-gradient-to-r from-purple-500/20 to-blue-500/20 backdrop-blur-sm border border-purple-500/30  mb-6 sm:mb-8 mt-16 lg:mt-8 animate__animated animate__fadeInDown animate__delay-1s shadow-lg shadow-purple-500/20">
-                <i className="fas fa-star text-purple-400 animate-spin text-sm"></i>
-                <span className="text-purple-300 text-sm sm:text-base font-semibold tracking-wide">
+              <div className="inline-flex items-center gap-2 px-4 sm:px-6 py-3 rounded-2xl bg-gradient-to-r from-blue-700/20 to-sky-400/20 backdrop-blur-sm border border-blue-500/30  mb-6 sm:mb-8 mt-16 lg:mt-8 animate__animated animate__fadeInDown animate__delay-1s shadow-lg shadow-blue-500/20">
+                <i className="fas fa-star text-sky-300 animate-spin text-sm"></i>
+                <span className="text-blue-200 text-sm sm:text-base font-semibold tracking-wide">
                   Welcome to my website
                 </span>
               </div>
@@ -191,18 +241,18 @@ const profile = {
               {/* Name section - Different Look: Removed SparklesText, added a neon glow effect and a sliding animation instead of typing */}
               <div className="relative mb-6 sm:mb-8">
                 <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight text-center animate-slideInFromLeft">
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 animate-pulse">
+                  <span className="text-white drop-shadow-[0_0_18px_rgba(59,130,246,0.35)]">
                     Hello
                   </span>
                   <span className="relative inline-block ml-4">
                     I&apos;m
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-200 via-blue-500 to-purple-900 animate-pulse">
+                    <span className="text-white drop-shadow-[0_0_18px_rgba(59,130,246,0.45)]">
                       {" "}
                       MANISH
                     </span>
                   </span>
                 </h1>
-                <div className="absolute -z-10 top-1/2 -translate-y-1/2 left-1/2 transform -translate-x-1/2 w-24 sm:w-32 h-24 sm:h-32 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-full blur-2xl animate-pulse"></div>
+                <div className="absolute -z-10 top-1/2 -translate-y-1/2 left-1/2 transform -translate-x-1/2 w-24 sm:w-32 h-24 sm:h-32 bg-gradient-to-r from-sky-400/20 to-blue-600/20 rounded-full blur-2xl animate-pulse"></div>
               </div>
 
               {/* Role badge */}
@@ -228,9 +278,9 @@ const profile = {
                 {/* View Projects Button */}
                 <a
                   href="https://github.com/1213manish" target="_blank" rel="noopener noreferrer"
-                  className="group relative inline-flex items-center justify-center gap-3 bg-gradient-to-r from-purple-900 to-pink-400 p-0.5 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-[0_0_2rem_-0.5rem_#60A5FA]"
+                  className="group relative inline-flex items-center justify-center gap-3 bg-gradient-to-r from-blue-900 to-cyan-400 p-0.5 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-[0_0_2rem_-0.5rem_#60A5FA]"
                 >
-                  <span className="block w-full px-6 sm:px-8 py-3 sm:py-4 rounded-[11px] bg-gray-900 transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-purple-900 group-hover:to-sky-900">
+                  <span className="block w-full px-6 sm:px-8 py-3 sm:py-4 rounded-[11px] bg-gray-900 transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-blue-900 group-hover:to-sky-700">
                     <span className="relative flex items-center justify-center gap-2 text-white font-medium">
                       <span>Learn More</span>
                       <i className="fas fa-arrow-right transform transition-all duration-300 group-hover:translate-x-1"></i>
@@ -238,51 +288,25 @@ const profile = {
                   </span>
                 </a>
 
-                {/* Contact Button */}
-                <a
-                    href="#"
-                    onClick={(e) => {
-                        e.preventDefault();
-                        toast.error("Check back later", {
-                          position: "bottom-right",
-                          autoClose: 2500,
-                          hideProgressBar: false,
-                          progressStyle: {
-                            background: "#a855f7", // purple glow
-                            height: "6px",
-                            borderRadius: "8px",
-                            boxShadow: "0 0 10px rgba(124,58,237,0.35)",
-                          },
-                          closeOnClick: true,
-                          pauseOnHover: true,
-                          draggable: true,
-                          theme: "dark",
-                          style: {
-                            background: "#0E0111", // purple and blue glow
-                            color: "#cbd5e1",
-                            border: "1px solid #0E0111",
-                            borderRadius: "0.75rem",
-                            fontSize: "0.95rem",
-                            fontWeight: 500,
-                          },
-                        });
-                      }}
-
-                    className="group relative inline-flex items-center justify-center gap-3 p-0.5 rounded-xl bg-gradient-to-r from-gray-800 to-gray-700 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_2rem_-0.5rem_#60A5FA]"
-                  >
-                    <span className="block w-full px-6 sm:px-8 py-3 sm:py-4 rounded-[11px] bg-gray-900 border border-gray-700/50 transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-gray-800 group-hover:to-gray-700">
-                      <span className="relative flex items-center justify-center gap-2 text-gray-300 font-medium group-hover:text-white">
-                        <span>Get Resume</span>
-                        <i className="fas fa-envelope transform transition-all duration-300 group-hover:rotate-12"></i>
-                      </span>
+                {/* Resume Download Button */}
+                <button
+                  type="button"
+                  onClick={() => setIsResumeModalOpen(true)}
+                  className="group relative inline-flex items-center justify-center gap-3 p-0.5 rounded-xl bg-gradient-to-r from-gray-800 to-gray-700 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_2rem_-0.5rem_#60A5FA]"
+                >
+                  <span className="block w-full px-6 sm:px-8 py-3 sm:py-4 rounded-[11px] bg-gray-900 border border-gray-700/50 transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-gray-800 group-hover:to-gray-700">
+                    <span className="relative flex items-center justify-center gap-2 text-gray-300 font-medium group-hover:text-white">
+                      <span>Get Resume</span>
+                      <i className="fas fa-envelope transform transition-all duration-300 group-hover:rotate-12"></i>
                     </span>
-                  </a>
+                  </span>
+                </button>
 
               </div>
 
               {/* Floating badges - Repositioned to left and right sides for better symmetry */}
               <div className="hidden lg:block absolute left-1 top-1/2 animate-float-slow">
-                <div className="px-4 py-2 rounded-lg bg-purple-500/10 backdrop-blur-sm border border-purple-500/20 text-purple-400">
+                <div className="px-4 py-2 rounded-lg bg-blue-500/10 backdrop-blur-sm border border-blue-500/20 text-blue-300">
                   <i className="fas fa-wand-magic-sparkles"></i>&nbsp;&nbsp;UI
                   Magic
                 </div>
@@ -302,7 +326,7 @@ const profile = {
             {/* Code window - Kept below for a stacked layout twist */}
             <div className="w-full max-w-2xl animate__animated animate__fadeInDown animate__delay-0.1s">
               <div className="gradient-border">
-                <div className="code-window bg-[#3f0f3a]">
+                <div className="code-window bg-[#071b3a]">
                   <div className="window-header">
                     <div className="window-dot bg-red-500"></div>
                     <div className="window-dot bg-yellow-500"></div>
@@ -331,6 +355,64 @@ const profile = {
         </div>
         <PortfolioPage />
       </main>
+
+      {isResumeModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
+          <div
+            className="absolute inset-0 bg-black/70"
+            onClick={() => setIsResumeModalOpen(false)}
+            aria-hidden="true"
+          ></div>
+
+          <div className="relative w-full max-w-4xl">
+            <div className="p-[2px] rounded-3xl bg-gradient-to-r from-sky-400 via-blue-900 to-slate-950 animate-gradient-x shadow-[0_0_40px_rgba(8,47,73,0.7)]">
+              <div className="bg-[#071736] rounded-3xl border border-slate-800/80 p-6 md:p-8">
+                <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between mb-5">
+              <div>
+                <p className="text-xs uppercase tracking-[0.35em] text-blue-300/70 mb-1">
+                  Resume Preview
+                </p>
+                <h3 className="text-2xl font-semibold text-white">
+                  {resumeFileName}
+                </h3>
+              </div>
+
+                  <div className="flex flex-wrap gap-3">
+                    <button
+                      type="button"
+                      onClick={handleResumeDownload}
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-blue-500/40 text-blue-100 bg-blue-500/10 hover:bg-blue-500/20 transition"
+                    >
+                      <i className="fas fa-download"></i>
+                      Download
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setIsResumeModalOpen(false)}
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-600 text-slate-200 hover:bg-slate-800/60 transition"
+                    >
+                      <i className="fas fa-times"></i>
+                      Close
+                    </button>
+                  </div>
+                </div>
+
+                <div className="w-full h-[70vh] bg-[#050d1a] border border-slate-800/70 rounded-2xl overflow-hidden">
+                  <iframe
+                    src={`${resumeUrl}#toolbar=0&navpanes=0&scrollbar=0`}
+                    title="Resume preview"
+                    className="w-full h-full"
+                  ></iframe>
+                </div>
+
+                <p className="text-xs text-slate-400 mt-3">
+                  If the preview doesn&apos;t load, use the download button to open the PDF in your viewer.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }

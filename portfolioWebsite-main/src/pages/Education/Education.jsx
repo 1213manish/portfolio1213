@@ -15,14 +15,27 @@ const EducationSection = () => {
 
   const educationData = [
     {
+      degree: "Bachelor of Technology",
+      school: "Lovely Professional University",
+      mascot: "📗",
+      year: "2023-Current",
+      achievements: ["GPA: 7.4", "Branch: Computer Science & Engineering"],
+      skills: [
+        "Data Structures",
+        "Algorithms",
+        "Object-Oriented Programming",
+        "Database Systems",
+        "Web Development",
+      ],
+      description:
+        "Pursuing B.Tech in Computer Science with focus on software development, algorithms, and modern programming technologies. Actively participating in coding competitions and technical workshops.",
+    },
+    {
       degree: "Senior Secondary School",
       school: "Sainik School Gopalganj",
       mascot: "📘",
       year: "2022",
-      achievements: [
-        "Appointment",
-        "Stream: Science (PCM)",
-      ],
+      achievements: ["Appointment", "Stream: Science (PCM)"],
       skills: [
         "Mathematics",
         "Physics",
@@ -33,20 +46,6 @@ const EducationSection = () => {
       ],
       description:
         "Excelled in science stream with focus on advanced mathematics and physical sciences. Developed strong analytical and problem-solving skills through practical laboratory work and research-based projects.",
-    },
-    {
-      degree: "Bachelor of Technology",
-      school: "Lovely Professional University",
-      mascot: "📗",
-      year: "2023-Current",
-      achievements: ["GPA: 7.1", "Branch: Computer Science & Engineering"],
-      skills: ["Data Structures",
-        "Algorithms",
-        "Object-Oriented Programming",
-        "Database Systems",
-        "Web Development",],
-      description:
-        "Pursuing B.Tech in Computer Science with focus on software development, algorithms, and modern programming technologies. Actively participating in coding competitions and technical workshops.",
     },
   ];
 
@@ -73,7 +72,7 @@ const EducationSection = () => {
   };
 
   return (
-    <section className="min-h-screen relative overflow-hidden py-40 bg-[#130b14]">
+    <section className="min-h-screen relative overflow-hidden py-40 bg-[#050d1a]">
       {/* Grid Background */}
       
 
@@ -84,7 +83,7 @@ const EducationSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-800 to-blue-500 bg-clip-text text-transparent mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-800 to-sky-400 bg-clip-text text-transparent mb-6">
             Educational Journey
           </h2>
           <p className="text-gray-300 max-w-2xl mx-auto text-lg">
@@ -105,7 +104,7 @@ const EducationSection = () => {
               variants={cardVariants}
               className={`relative border rounded-xl p-8 transition-all duration-300 bg-gray-900/50 backdrop-blur-sm ${
                 hoveredIndex === index
-                  ? "border-purple-900 scale-[1.04]"
+                  ? "border-blue-800 scale-[1.04]"
                   : "border-blue-400/20"
               }`}
               onMouseEnter={() => setHoveredIndex(index)}

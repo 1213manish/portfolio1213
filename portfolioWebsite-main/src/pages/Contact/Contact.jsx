@@ -123,7 +123,7 @@ export default function Contact() {
 
   return (
     <main
-      className="pt-20 lg:pt-[0rem] bg-[#130b14] text-white min-h-screen relative"
+      className="pt-20 lg:pt-[0rem] bg-[#050d1a] text-white min-h-screen relative"
     >
       {showConfetti && <Confetti />} {/* Confetti effect */}
       <section className="hero min-h-screen flex items-center relative px-4 sm:px-6 lg:px-8">
@@ -132,7 +132,7 @@ export default function Contact() {
             {/* Contact Info */}
             <div className="space-y-8">
               <div>
-                <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
                   Get in Touch
                 </h2>
                 <p className="text-gray-300 text-lg">
@@ -142,8 +142,8 @@ export default function Contact() {
 
               <div className="space-y-6">
                 <div className="flex items-center space-x-4">
-                  <div className="bg-purple-500/10 p-3 rounded-lg">
-                    <Mail className="w-6 h-6 text-purple-400" />
+                  <div className="bg-blue-500/10 p-3 rounded-lg">
+                    <Mail className="w-6 h-6 text-blue-300" />
                   </div>
                   <div className="flex-1">
                     <h3 className="font-semibold">Email</h3>
@@ -151,7 +151,7 @@ export default function Contact() {
                       <p className="text-gray-400">manishkr9192@gmail.com</p>
                       <button
                         onClick={handleCopyEmail}
-                        className="text-purple-400 hover:text-purple-300 transition-colors"
+                        className="text-sky-300 hover:text-sky-200 transition-colors"
                         title="Copy Email"
                       >
                         <Copy className="w-4 h-4" />
@@ -161,8 +161,8 @@ export default function Contact() {
                 </div>
 
                 <div className="flex items-center space-x-4">
-                  <div className="bg-pink-500/10 p-3 rounded-lg">
-                    <MapPin className="w-6 h-6 text-pink-400" />
+                  <div className="bg-cyan-500/10 p-3 rounded-lg">
+                    <MapPin className="w-6 h-6 text-cyan-300" />
                   </div>
                   <div>
                     <h3 className="font-semibold">Location</h3>
@@ -253,7 +253,7 @@ export default function Contact() {
                <button
   type="submit"
   disabled={isLoading}
-  className={`w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white py-3 px-6 rounded-lg font-semibold flex items-center justify-center space-x-2 transition-opacity ${
+  className={`w-full bg-gradient-to-r from-blue-600 to-cyan-400 text-white py-3 px-6 rounded-lg font-semibold flex items-center justify-center space-x-2 transition-opacity ${
     isLoading ? "opacity-70 cursor-not-allowed" : "hover:opacity-90"
   }`}
 >

@@ -2,67 +2,40 @@ import Lenis from '@studio-freight/lenis'
 import { useEffect, useRef } from "react"
 import { useTransform, motion, useScroll } from "framer-motion";
 import PropTypes from "prop-types";
+import peptideStoreImg from "/src/assets/images/peptideStore.png";
+import holaImg from "/src/assets/images/hola.png";
+import listeoImg from "/src/assets/images/Appointment Booking.png";
 
 const projects = [
    {
-    title: "Roomezy",
+    title: "Peptide Store",
     description:
-      "A modern room-sharing and rental platform that helps users discover, connect, and manage stays with a seamless social and booking experience.",
+      "An e-commerce storefront for premium peptides featuring curated product collections, secure checkout, and responsive merchandising.",
     src: "",
-    link: "https://res.cloudinary.com/djsytmwcw/image/upload/v1766384234/samples/paper.png",
+    link: peptideStoreImg,
     color: "brown",
     githubLink: "https://github.com/Aman-ydav/Roomezy",
     liveLink: "https://roomezy.vercel.app/",
   },
-   {
-    title: "CareSync - Hospital Management System",
+  {
+   title: "Hola",
     description:
-      "An AI-powered healthcare management platform that streamlines patient records, appointments, and digital care coordination in one unified system.",
+      "Hola is a multi-utility tools app bundling a calculator, QR scanner, QR generator, and room for more productivity helpers down the road.",
     src: "",
-    link: "https://res.cloudinary.com/djsytmwcw/image/upload/v1766384252/samples/waves.png",
+    link: holaImg,
     color: "teal",
     githubLink: "https://github.com/Aman-ydav/CareSync",
     liveLink: "https://caresyncapp.vercel.app/",
   },
   {
-    title: "Spark Student Club Website",
+    title: "Listéo - Appointment Booking",
     description:
-      "Official website for Spark student organisation featuring events, team, and a database connected joining form.",
+      "Listéo is a modern appointment booking and service listing hub where users search verified providers, reserve time slots, and pay securely while businesses manage listings, bookings, wallet, and payouts in one dashboard.",
     src: "",
-    link: "https://res.cloudinary.com/djsytmwcw/image/upload/v1763216482/roomezy/ma8v3sfm1hiijejawhl8.png",
+    link: listeoImg,
     color: "orange",
     githubLink: "https://github.com/Aman-ydav/spark",
     liveLink: "https://www.sparkedu.in/",
-  },
-  {
-    title: "Diabetes Predictor",
-    description:
-      "ML - based tool that predicts diabetes risk using real data and user health metrics.",
-    src: "",
-    link: "https://res.cloudinary.com/djsytmwcw/image/upload/v1763216543/roomezy/boto4cr9ca6ss68ie5fc.png",
-    color: "skyblue",
-    githubLink: "https://github.com/Aman-ydav/diabetes-prediction",
-    liveLink: "https://diabetes-prediction-beta.vercel.app/",
-  },
-  {
-    title: "Virtual Zoo",
-    description:
-      "A creative and educational virtual zoo platform where users can explore different species hologram interactively.",
-    src: "",
-    link: "https://res.cloudinary.com/djsytmwcw/image/upload/v1763216519/roomezy/gyr73ydb7decfao3kekx.png",
-    color: "orange",
-    githubLink: "https://github.com/Aman-ydav/virtual_zoo",
-    liveLink: "https://virtual-zoo-app.vercel.app/",
-  },
-  {
-    title: "Fleet Management System",
-    description:
-      "PHP-based system with login, driver tracking, and vehicle allocation for managers",
-    src: "",
-    link: "https://res.cloudinary.com/djsytmwcw/image/upload/v1763216560/roomezy/qxwthwowxunkbvt6fshm.png",
-    color: "#ed649e",
-    githubLink: "https://github.com/Aman-ydav/fleetPro",
-    liveLink: "https://fleet-pro.infinityfreeapp.com/",
   },
 ];
 
@@ -125,7 +98,7 @@ export default function Projects() {
   }, []);
 
   return (
-     <main className="bg-[#130b14]" ref={container}>
+    <main className="bg-[#050d1a]" ref={container}>
       <section className="text-white w-full ">
         {projects.map((project, i) => {
           const targetScale = 1 - (projects.length - i) * 0.05;
@@ -183,9 +156,9 @@ function Card({
           transition: { duration: 0.3 },
         }}
       >
-        <div className="w-full h-[55vh] flex flex-col md:flex-row bg-[#160e24] rounded-2xl overflow-hidden shadow-xl">
+        <div className="w-full h-[55vh] flex flex-col md:flex-row bg-[#071736] rounded-2xl overflow-hidden shadow-xl">
 
-          <div className="w-full md:w-[55%] h-auto relative bg-white flex items-center justify-center">
+          <div className="w-full md:w-[55%] h-auto relative flex items-center justify-center" style={{ backgroundColor: "#050d1a" }}>
             <motion.img
               src={url}
               alt={title}

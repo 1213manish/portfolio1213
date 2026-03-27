@@ -71,7 +71,7 @@ module.exports = {
           5: "hsl(var(--chart-5))",
         },
         
-        blue: colors.violet,
+        blue: colors.blue,
       },
     },
   },
