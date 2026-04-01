@@ -7,6 +7,8 @@ import "/src/assets/css/toast-custom.css";
 import {Loader2 } from "lucide-react";
 
 export default function Contact() {
+  const contactEmail = "manishkr9192@gmail.com";
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -100,7 +102,7 @@ export default function Contact() {
 
   const handleCopyEmail = async () => {
     try {
-      await navigator.clipboard.writeText("amanyadav923949@gmail.com");
+      await navigator.clipboard.writeText(contactEmail);
       toast.success("Email copied to clipboard!", {
         position: "bottom-right",
         autoClose: 3000,
@@ -132,10 +134,10 @@ export default function Contact() {
             {/* Contact Info */}
             <div className="space-y-8">
               <div>
-                <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                <h2 className="text-6xl md:text-7xl font-black leading-tight mb-5 bg-gradient-to-r from-blue-500 to-cyan-300 bg-clip-text text-transparent">
                   Get in Touch
                 </h2>
-                <p className="text-gray-300 text-lg">
+                <p className="text-gray-100/95 text-lg md:text-2xl font-medium leading-relaxed max-w-2xl">
                   Have a question or want to work together? Drop us a message!
                 </p>
               </div>
@@ -148,7 +150,7 @@ export default function Contact() {
                   <div className="flex-1">
                     <h3 className="font-semibold">Email</h3>
                     <div className="flex items-center space-x-2">
-                      <p className="text-gray-400">manishkr9192@gmail.com</p>
+                      <p className="text-gray-400">{contactEmail}</p>
                       <button
                         onClick={handleCopyEmail}
                         className="text-sky-300 hover:text-sky-200 transition-colors"

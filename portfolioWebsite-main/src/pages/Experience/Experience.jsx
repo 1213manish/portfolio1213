@@ -17,7 +17,7 @@ const ExperienceCard = ({
     {/* Animated gradient border */}
     <div className="absolute -inset-[2px] bg-gradient-to-r from-blue-600 via-sky-700 to-indigo-900 rounded-lg opacity-0 group-hover:opacity-100 animate-gradient-xy transition-all duration-500" />
 
-    <div className="relative bg-gray-900/90 rounded-lg p-8 h-full border border-gray-800/50 shadow-xl backdrop-blur-xl">
+    <div className="relative bg-gray-900/90 rounded-lg p-8 h-full border border-gray-800/50 shadow-xl backdrop-blur-xl transition-all duration-300 group-hover:border-cyan-400/55 group-hover:shadow-[0_0_40px_rgba(34,211,238,0.26)]">
       {/* Floating icon with pulse effect */}
       <div className="relative mb-6">
         <div className="absolute -inset-4 bg-gradient-to-r from-blue-500 to-cyan-400 opacity-25 rounded-full blur-xl group-hover:opacity-75 animate-pulse transition-all duration-500" />

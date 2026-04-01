@@ -83,12 +83,12 @@ const EducationSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-800 to-sky-400 bg-clip-text text-transparent mb-6">
+          <h2 className="text-5xl md:text-7xl font-black bg-gradient-to-r from-blue-900 to-teal-400 bg-clip-text text-transparent mb-6">
             Educational Journey
           </h2>
-          <p className="text-gray-300 max-w-2xl mx-auto text-lg">
-            Discover how academic excellence shapes innovative thinking and
-            professional growth.
+          <p className="text-lg md:text-xl text-gray-400 font-medium tracking-wide text-center max-w-4xl mx-auto">
+            "Discover how academic excellence shapes innovative thinking and
+            professional growth."
           </p>
         </motion.div>
 
@@ -104,7 +104,7 @@ const EducationSection = () => {
               variants={cardVariants}
               className={`relative border rounded-xl p-8 transition-all duration-300 bg-gray-900/50 backdrop-blur-sm ${
                 hoveredIndex === index
-                  ? "border-blue-800 scale-[1.04]"
+                  ? "border-cyan-400/55 scale-[1.04] shadow-[0_0_40px_rgba(34,211,238,0.26)]"
                   : "border-blue-400/20"
               }`}
               onMouseEnter={() => setHoveredIndex(index)}

@@ -7,6 +7,7 @@ import Header from "./pages/Header/Header";
 import Hero from "./pages/Hero/Hero";
 import Skills from "./pages/Skills/Skills";
 import Education from "./pages/Education/Education";
+import Certification from "./pages/Certification/Certification";
 import { ToastContainer } from "react-toastify";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -26,15 +27,17 @@ export default function App() {
           <Skills />
           <Experience />
           <Education />
+          <Certification />
           <Contact />
         </>
       ) : (
         // Router Mode: Use routes for navigation
-        <Routes>`
+        <Routes>
           <Route path="/" element={<Hero />} />
           <Route path="/skills" element={<Skills />} />
           <Route path="/experience" element={<Experience />} />
           <Route path="/education" element={<Education />} />
+          <Route path="/certification" element={<Certification />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/projects" element={<Projects />} />
         </Routes>
