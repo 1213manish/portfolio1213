@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import peptideStoreImg from "/src/assets/images/peptideStore.png";
 import holaImg from "/src/assets/images/hola.png";
 import listeoImg from "/src/assets/images/Appointment Booking.png";
+import dentistSiteImg from "/src/assets/images/Dentist Site.png";
 
 const projects = [
    {
@@ -36,6 +37,16 @@ const projects = [
     color: "orange",
     githubLink: "https://github.com/Aman-ydav/spark",
     liveLink: "https://www.sparkedu.in/",
+  },
+  {
+    title: "Dentist Site",
+    description:
+      "Developed an AI-powered platform for dentistry students with quizzes, summaries, and flashcards. Designed responsive UI, integrated progress tracking, gamification, and built a scalable full-stack solution.",
+    src: "",
+    link: dentistSiteImg,
+    color: "#1f4d8f",
+    githubLink: "https://github.com/1213manish/Dentist-Site",
+    liveLink: "https://dentist-site-ten.vercel.app/",
   },
 ];
 
