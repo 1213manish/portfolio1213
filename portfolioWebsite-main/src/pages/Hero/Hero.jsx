@@ -8,9 +8,7 @@ import { FlipWords } from "@/components/ui/flip-words";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import "/src/assets/css/tomorrow.css";
-import "react-toastify/dist/ReactToastify.css";
-import "/src/assets/css/toast-custom.css";  // your custom styles
+import "@/assets/css/toast-custom.css";
 
 
 
@@ -112,7 +110,7 @@ const profile = {
         return (
             this.hardWorker &&
             this.problemSolver &&
-            this.skills.length >= 5 &&
+            this.skills.length >= 5
         );
     }
 };

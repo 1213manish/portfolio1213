@@ -60,13 +60,14 @@ export default function Projects() {
 
   useEffect(() => {
     const lenis = new Lenis()
+    let rafId;
 
     function raf(time) {
       lenis.raf(time)
-      requestAnimationFrame(raf)
+      rafId = requestAnimationFrame(raf)
     }
 
-    requestAnimationFrame(raf)
+    rafId = requestAnimationFrame(raf)
     const style = document.createElement("style");
     style.textContent = `
       @media screen and (width: 1366px) and (height: 768px),
@@ -103,6 +104,8 @@ export default function Projects() {
     window.addEventListener("resize", checkResolution);
 
     return () => {
+      cancelAnimationFrame(rafId);
+      lenis.destroy();
       document.head.removeChild(style);
       window.removeEventListener("resize", checkResolution);
     };

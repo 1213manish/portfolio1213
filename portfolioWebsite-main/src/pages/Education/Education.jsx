@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import EducationLoader from "@/components/ui/EducationLoader";
 import {
   Star,
-  Award,  
+  Award,
   Calendar,
   BookOpen,
   GraduationCap,
@@ -19,7 +19,7 @@ const EducationSection = () => {
       school: "Lovely Professional University",
       mascot: "📗",
       year: "2023-Current",
-      achievements: ["GPA: 7.4", "Branch: Computer Science & Engineering"],
+      achievements: ["GPA: 7.6", "Branch: Computer Science & Engineering"],
       skills: [
         "Data Structures",
         "Algorithms",
@@ -74,7 +74,7 @@ const EducationSection = () => {
   return (
     <section className="min-h-screen relative overflow-hidden py-40 bg-[#050d1a]">
       {/* Grid Background */}
-      
+
 
       <div className="max-w-6xl mx-auto px-4 relative z-10">
         <motion.div
@@ -102,11 +102,10 @@ const EducationSection = () => {
             <motion.div
               key={index}
               variants={cardVariants}
-              className={`relative border rounded-xl p-8 transition-all duration-300 bg-gray-900/50 backdrop-blur-sm ${
-                hoveredIndex === index
+              className={`relative border rounded-xl p-8 transition-all duration-300 bg-gray-900/50 backdrop-blur-sm ${hoveredIndex === index
                   ? "border-cyan-400/55 scale-[1.04] shadow-[0_0_40px_rgba(34,211,238,0.26)]"
                   : "border-blue-400/20"
-              }`}
+                }`}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
@@ -165,7 +164,7 @@ const EducationSection = () => {
           ))}
         </motion.div>
       </div>
-      <EducationLoader/>  
+      <EducationLoader />
     </section>
   );
 };
